@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>D3 Animated Bar Chart</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<style>
+    /* Style the SVG container */
+    svg {
+        background-color: #f5f5f5;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Style the bars */
+    rect {
+        fill: #6d9eeb;
+        transition: height 1s, y 1s;
+    }
+
+    /* Style the axes */
+    path,
+    line {
+        stroke: #ccc;
+    }
+
+    /* Style the axis labels */
+    text {
+        font-family: sans-serif;
+        font-size: 12px;
+        fill: #555;
+    }
+
+    /* Style the chart title */
+    .chart-title {
+        font-family: sans-serif;
+        font-size: 20px;
+        font-weight: bold;
+        fill: #333;
+        text-anchor: middle;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-top: 20px;
+    }
+
+    /* Style the Y-axis label */
+    .y-axis-label {
+        font-family: sans-serif;
+        font-size: 14px;
+        font-weight: bold;
+        fill: #333;
+        text-anchor: middle;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        transform: rotate(-90deg);
+        transform-origin: left center;
+        margin-right: 20px;
+    }
+</style>
+
+<body>
+    <svg width="600" height="500"></svg>
+
+    <script>
+        const data = [10, 50, 80, 30, 70];
+
+const margin = { top: 50, right: 50, bottom: 50, left: 100 };
+const width = 600 - margin.left - margin.right;
+const height = 500 - margin.top - margin.bottom;
+
+const svg = d3.select("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+    .append("g")
+    .attr("transform", `translate(${margin.left},${margin.top})`);
+
+const xScale = d3.scaleBand()
+    .domain(d3.range(data.length))
+    .range([0, width])
+    .padding(0.2);
+
+const yScale = d3.scaleLinear()
+    .domain([0, d3.max(data)])
+    .range([height, 0]);
+
+const bars = svg.selectAll("rect")
+    .data(data)
+    .enter()
+    .append("rect")
+    .attr("x", (d, i) => xScale(i))
+    .attr("y", height)
+    .attr("width", xScale.bandwidth())
+    .attr("height", 0)
+    .attr("fill", "steelblue")
+    .on("mouseover", function (event, d) {
+        d3.select(this).style("fill", "#d62728");
+        d3.select(this)
+            .transition()
+            .duration(100)
+            .attr("y", d => yScale(d) - 10)
+            .attr("height", d => height - yScale(d) + 10);
+        
+
+        svg.append("text")
+            .attr("class", "tooltip")
+            .attr("x",  xScale(data.indexOf(d)) + xScale.bandwidth() / 2)
+            .attr("y", yScale(d) - 20)
+            .attr("text-anchor", "middle")
+            
+            .text(d+"%");
+        console.log(d)
+    })
+    .on("mouseout", function (d) {
+        d3.select(this).style("fill", "#6d9eeb");
+        d3.select(this)
+      .transition()
+      .duration(5)
+      .attr("y", d => yScale(d))
+      .attr("height", d => height - yScale(d));
+    svg.selectAll(".tooltip").remove()
+        
+    })
+    .transition()
+    .delay((d, i) => i * 500)
+    .duration(1000)
+    .attr("y", (d) => yScale(d))
+    .attr("height", (d) => height - yScale(d))
+    .transition();
+
+const xAxis = d3.axisBottom(xScale);
+svg.append("g")
+    .attr("transform", `translate(0,${height})`)
+    .call(xAxis);
+
+const yAxis = d3.axisLeft(yScale);
+svg.append("g")
+    .call(yAxis);
+
+const yAxisLabel = svg.append("text")
+    .attr("transform", "rotate(-90)")
+    .attr("y", 0)
+    .attr("x", -250)
+    .attr("dy", "1em")
+    .style("text-anchor", "middle")
+    .text("Y-axis Label");
+
+
+    </script>
+</body>
+
+</html>
