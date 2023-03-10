@@ -26,6 +26,8 @@
     path,
     line {
         stroke: #ccc;
+        stroke-width: 2px;
+
     }
 
     /* Style the axis labels */
@@ -44,7 +46,32 @@
         text-anchor: middle;
         text-transform: uppercase;
         letter-spacing: 2px;
-        margin-top: 20px;
+        margin-top: 30px;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        background-image: linear-gradient(to right, #5E5AA8, #FF5F6D);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-size: 200% auto;
+        animation: animate-gradient 3s ease infinite;
+
+    }
+
+
+    @keyframes animate-gradient {
+        0% {
+            background-position: 0 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+
+        100% {
+            background-position: 0 50%;
+        }
     }
 
     /* Style the Y-axis label */
@@ -63,18 +90,29 @@
 </style>
 
 <body>
-    <svg width="600" height="500"></svg>
+    <div class="chart-container">
+        <div class="chart-title">Survey Results</div>
+        <svg width="600" height="500"></svg>
+
+    </div>
+
+
+
 
     <script>
+        const colorPercentile = localStorage.getItem('colorPercentile');
+        const exercisePercentile = localStorage.getItem('exercisePercentile');
+        const devicesPercentile = localStorage.getItem('devicesPercentile');
+        const foodPercentile = localStorage.getItem('foodPercentile');
+
         const data = [
-            { category: 'color', value: 10 },
-            { category: 'exercise', value: 50 },
-            { category: 'devices', value: 80 },
-            { category: 'food', value: 30 },
-            { category: 'music', value: 70 },
+            { category: 'color', value: colorPercentile },
+            { category: 'exercise', value: exercisePercentile },
+            { category: 'devices', value: devicesPercentile },
+            { category: 'food', value: foodPercentile },
         ];
 
-        const margin = { top: 50, right: 50, bottom: 50, left: 100 };
+        const margin = { top: 50, right: 50, bottom: 50, left: 50 };
         const width = 600 - margin.left - margin.right;
         const height = 500 - margin.top - margin.bottom;
 
@@ -90,7 +128,7 @@
             .padding(0.2);
 
         const yScale = d3.scaleLinear()
-            .domain([0, d3.max(data, d => d.value)])
+            .domain([0, 100])
             .range([height, 0]);
 
         const bars = svg.selectAll("rect")
@@ -139,17 +177,17 @@
             .attr("transform", `translate(0,${height})`)
             .call(xAxis);
 
-        const yAxis = d3.axisLeft(yScale);
-        svg.append("g")
-            .call(yAxis);
+        // const yAxis = d3.axisLeft(yScale);
+        // svg.append("g")
+        //     .call(yAxis);
 
-        const yAxisLabel = svg.append("text")
-            .attr("transform", "rotate(-90)")
-            .attr("y", -height / 9)
-            .attr("x", -175)
-            .attr("dy", "1em")
-            .style("text-anchor", "middle")
-            .text("Y-axis Label");
+        // const yAxisLabel = svg.append("text")
+        //     .attr("transform", "rotate(-90)")
+        //     .attr("y", -height / 9)
+        //     .attr("x", -175)
+        //     .attr("dy", "1em")
+        //     .style("text-anchor", "middle")
+        //     .text("Y-axis Label");
 
         const xAxisLabel = svg.append("text")
             .attr("class", "x-axis-label")
