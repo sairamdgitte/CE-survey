@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Survey Form</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <form method="POST" id="survey-form">
+            <div class="question">How do you normally commute to campus? (Select one)</div>
+            <div class="answer"><input type="radio" name="commute" value="Public transport"> <span>Public transport - trams/trains/bus</span></div>
+            <div class="answer"><input type="radio" name="commute" value="Bicycle"> <span>Bicycle</span></div>
+            <div class="answer"><input type="radio" name="commute" value="Scooter/motor bike"> <span>Scooter/ motor bike</span></div>
+            <div class="answer"><input type="radio" name="commute" value="Walk"> <span>Walk</span></div>
+            <div class="answer"><input type="radio" name="commute" value="Drive"> <span>Drive</span></div>
+            <div class="answer"><input type="radio" name="commute" value="Other - please specify"> <span>Other - please specify</span></div>
+
+            <br>
+            <div class="question">What sustainable activities do you practice on a regular basis? (select all that apply) I try to:</div>
+            <div class="answer">
+                <input type="checkbox" name="activities[]" value="Refill my water bottles">
+                <span>Refill my water bottles</span>
+            </div>
+            <div class="answer">
+                <input type="checkbox" name="activities[]" value="Use cloth shopping bags, or reuse plastic bags">
+                <span>Use cloth shopping bags, or reuse plastic bags</span>
+            </div>
+            <div class="answer">
+                <input type="checkbox" name="activities[]" value="Not to print paper unless I really need to">
+                <span>Not to print paper unless I really need to</span>
+            </div>
+            <div class="answer">
+                <input type="checkbox" name="activities[]" value="Walk/ride where possible">
+                <span>Walk/ride where possible</span>
+            </div>
+            <div class="answer">
+                <input type="checkbox" name="activities[]" value="Repair or repurpose items (ie repurposing materials for artwork etc)">
+                <span>Repair or repurpose items (ie repurposing materials for artwork etc)</span>
+            </div>
+            <div class="answer">
+                <input type="checkbox" name="activities[]" value="Use a keep cup">
+                <span>Use a keep cup</span>
+            </div>
+            <div class="answer">
+                <input type="checkbox" name="activities[]" value="Buy second hand and used items such as clothes, furniture etc">
+                <span>Buy second hand and used items such as clothes, furniture etc</span>
+            </div>
+            <div class="answer">
+                <input type="checkbox" name="activities[]" value="Resell items on marketplaces to avoid waste">
+                <span>Resell items on marketplaces to avoid waste</span>
+            </div>
+            <div class="answer">
+                <input type="checkbox" name="activities[]" value="Avoid eating meat">
+                <span>Avoid eating meat</span>
+            </div>
+            <div class="answer">
+                <input type="checkbox" name="activities[]" value="Other - please specify">
+                <span>Other - please specify</span>
+            </div>
+            <br>
+
+            <div class="question">Do you shop or own any pre-owned items - clothes, phones, electronic devices, cars or house facilities?</div>
+            <div class="answer"><input type="radio" name="shop" value="Yes, a majority of items I use are pre-owned - Please specify what items"> <span>Yes, a majority of items I use are pre-owned - Please specify what items</span></div>
+            <div class="answer"><input type="radio" name="shop" value="Yes, I shop and use some pre-owned items - Please specify what items"> <span>Yes, I shop and use some pre-owned items - Please specify what items</span></div>
+            <div class="answer"><input type="radio" name="shop" value="Rarely, I have a few pre-owned items - please specify what items"> <span>Rarely, I have a few pre-owned items - please specify what items</span></div>
+            <div class="answer"><input type="radio" name="shop" value="No, I prefer new items - Please specify reasons"> <span>No, I prefer new items - Please specify reasons</span></div>
+            <br>
+
+            <div class="question">Have you shopped for any products made from recycled materials or show environmental consideration on the product labels?</div>
+            <div class="answer"><input type="radio" name="materials" value="Yes - I shop for products made from recycled materials and show environmental consideration on the product labels."> <span>Yes - I shop for products made from recycled materials and show environmental consideration on the product labels.</span></div>
+            <div class="answer"><input type="radio" name="materials" value="Sometimes - I shop for some kinds of products from recycled materials or show environmental consideration depending on the type and quality of the product."> <span>Sometimes - I shop for some kinds of products from recycled materials or show environmental consideration depending on the type and quality of the product.</span></div>
+            <div class="answer"><input type="radio" name="materials" value="Maybe - I do not put much attention to the material labels of products."> <span>Maybe - I do not put much attention to the material labels of products.</span></div>
+            <div class="answer"><input type="radio" name="materials" value="No - Not interested."> <span>No - Not interested.</span></div>
+            <br>
+
+            <div class="question">What would you do if an op-shop were opened on campus?</div>
+            <div class="answer"><input type="radio" name="opshop" value="I'll be delighted! I would love to shop for pre-loved products."> <span>I'll be delighted! I would love to shop for pre-loved products.</span></div>
+            <div class="answer"><input type="radio" name="opshop" value="I would be happy to donate clothes, books, and other items."> <span>I would be happy to donate clothes, books, and other items.</span></div>
+            <div class="answer"><input type="radio" name="opshop" value="I will promote it through my social network."> <span>I will promote it through my social network.</span></div>
+            <div class="answer"><input type="radio" name="opshop" value="I'll check it out and shop if I find them good quality and interesting."> <span>I'll check it out and shop if I find them good quality and interesting.</span></div>
+            <div class="answer"><input type="radio" name="opshop" value="Not interested."> <span>Not interested.</span></div>
+            <div class="answer"><input type="radio" name="opshop" value="Other - please specify"> <span>Other - please specify</span></div>
+            <br>
+
+
+            <div class="question">What are your thoughts on the RMIT Repair Cafe?</div>
+            <div class="answer"><input type="radio" name="cafe" value="I have participated in/attended the repair cafe."> <span>I have participated in/attended the repair cafe.</span></div>
+            <div class="answer"><input type="radio" name="cafe" value="I would like to volunteer to repair and mend items"> <span>I would like to volunteer to repair and mend items</span></div>
+            <div class="answer"><input type="radio" name="cafe" value="I would love to improve my skills on mending and repairing"> <span>I would love to improve my skills on mending and repairing</span></div>
+            <div class="answer"><input type="radio" name="cafe" value="I will be happy to bring in clothes and other items to be repaired"> <span>I will be happy to bring in clothes and other items to be repaired</span></div>
+            <div class="answer"><input type="radio" name="cafe" value="I will visit and have a look"> <span>I will visit and have a look</span></div>
+            <div class="answer"><input type="radio" name="cafe" value="I am not interested"> <span>I am not interested</span></div>
+            <br>
+
+            <div class="question">How has covid related issues affected your long-term consumption and disposal practices? (Select all that apply)</div>
+            <div class="answer">
+                <input type="checkbox" name="practices[]" value="It has had no impact">
+                <span>It has had no impact</span>
+            </div>
+            <div class="answer">
+                <input type="checkbox" name="practices[]" value="I started using more disposal coffee cups, bottled water etc">
+                <span>I started using more disposal coffee cups, bottled water etc</span>
+            </div>
+            <div class="answer">
+                <input type="checkbox" name="practices[]" value="I use disposable masks so waste generation has increased">
+                <span>I use disposable masks so waste generation has increased</span>
+            </div>
+            <div class="answer">
+                <input type="checkbox" name="practices[]" value="I eat out less and bring my own food and drink">
+                <span>I eat out less and bring my own food and drink</span>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <div id="results"></div>
+
+        <script>
+            // Define existing data of questions and answers
+            const existingData = [
+                { question: 'How do you normally commute to campus? (Select one)', options: ['Public transport', 'Bicycle', 'Scooter/motor bike', 'Walk', 'Drive', 'Other - please specify'], answers: [71, 9, 2, 13, 9, 2] },
+                { question: 'What sustainable activities do you practice on a regular basis? (select all that apply) I try to:', options: ['Refill my water bottles', 'Use cloth shopping bags, or reuse plastic bags', 'Not to print paper unless I really need to', 'Walk/ride where possible', 'Repair or repurpose items (ie repurposing materials for artwork etc)', 'Use a keep cup', 'Buy second hand and used items such as clothes, furniture etc', 'Resell items on marketplaces to avoid waste', 'Avoid eating meat', 'Other - please specify'], answers: [73, 72, 64, 56, 41, 38, 38, 31, 23, 6] },
+                // { question: 'Which of the following devices do you use to access the internet?', options: ['Pizza', 'Pasta', 'Burger', 'Sushi', 'Other'], answers: [18, 22, 30, 10, 20] },
+                // { question: 'Which of the following programming languages have you used?', options: ['JavaScript', 'Python', 'Java', 'C++', 'Ruby', 'Other'], answers: [[true, false, true, false, false, false], [false, true, false, true, false, false], [true, false, true, true, false, false], [false, false, true, false, true, false], [false, false, false, false, true, false], [false, true, false, false, false, true], [true, true, false, false, false, false]] },
+                { question: 'Do you shop or own any pre-owned items - clothes, phones, electronic devices, cars or house facilities?', options: ['Yes, a majority of items I use are pre-owned - Please specify what items', 'Yes, I shop and use some pre-owned items - Please specify what items', 'Rarely, I have a few pre-owned items - please specify what items', 'No, I prefer new items - Please specify reasons'], answers: [19, 28, 20, 19] },
+                { question: 'Have you shopped for any products made from recycled materials or show environmental consideration on the product labels?', options: ['Yes - I shop for products made from recycled materials and show environmental consideration on the product labels.', 'Sometimes - I shop for some kinds of products from recycled materials or show environmental consideration depending on the type and quality of the product.', 'Maybe - I do not put much attention to the material labels of products.', 'No - Not interested.'], answers: [21, 42, 17, 6] },
+                { question: 'What would you do if an op-shop were opened on campus?', options: ["I'll be delighted! I would love to shop for pre-loved products.", 'I would be happy to donate clothes, books, and other items.', 'I will promote it through my social network.', "I'll check it out and shop if I find them good quality and interesting.", "Not interested.", "Other - please specify"], answers: [39, 42, 14, 42, 3, 5] },
+                { question: 'What are your thoughts on the RMIT Repair Cafe?', options: ["I have participated in/attended the repair cafe.", 'I would like to volunteer to repair and mend items', 'I will be happy to bring in clothes and other items to be repaired', "I will visit and have a look", "I am not interested"], answers: [3,5,25,29,50,10] },
+                { question: 'How has covid related issues affected your long-term consumption and disposal practices? (Select all that apply)', options: ["It has had no impact", 'I started using more disposal coffee cups, bottled water etc', 'I use disposable masks so waste generation has increased', "I eat out less and bring my own food and drink", "I eat out less and bring my own food and drink"], answers: [30, 16, 32, 21] },
+            ];
+            let value;
+            // Define a function to calculate the percentile of a new response
+            function calculatePercentile(newResponse) {
+                const questionIndex = existingData.findIndex(q => q.question === newResponse.question);
+                let optionIndex;
+                if (Array.isArray(newResponse.options)) {
+                    // console.log(newResponse.options)
+                    // handle multiple-answer question
+                    const answerOptions = existingData[questionIndex].options;
+
+                    optionIndex = newResponse.options.map(opt => answerOptions.indexOf(opt));
+                    // console.log(optionIndex)
+                    const words = newResponse.options;
+
+                    // console.log(newResponse.options)
+                    // optionIndex = existingData[questionIndex].options.reduce((acc, curr, idx) => words.some(word => curr.includes(word)) ? [...acc, idx] : acc, []);
+                    // optionIndex = existingData[questionIndex].options.indexOf(newResponse.options);
+                    // console.log(newResponse.options)
+                    // console.log(optionIndex);
+                    // console.log(existingData[questionIndex].answers.length)
+
+                    // console.log(optionIndex.constructor)
+                } else {
+                    // handle single-answer question
+                    optionIndex = existingData[questionIndex].options.indexOf(newResponse.options);
+
+                }
+                const answerCounts = existingData[questionIndex].answers;
+
+                // console.log(answerCounts)
+                let optionCount = 0;
+                let totalResponses;
+
+                if (Array.isArray(optionIndex)) {
+                    // handle multiple-answer question
+                    optionIndex.forEach(idx => optionCount += answerCounts.reduce((acc, curr) => acc + (curr[idx] ? 1 : 0), 0));
+                    // console.log(optionIndex)
+                    totalResponses = answerCounts.reduce((acc, curr) => acc + (Array.isArray(curr) ? curr.length : curr), 0);
+                    // fetch the option answers from the array
+                    for (i=0; i < optionIndex.length; i++){
+                        optionCount += existingData[questionIndex].answers[optionIndex[i]] + 1;
+                        // console.log(optionCount)
+                        totalResponses += 1;
+                    }
+
+                    // totalResponses = existingData[questionIndex].answers.length
+                    // optionCount = answerCounts[optionIndex];
+
+                    // console.log(optionIndex)
+                } else {
+                    // console.log(optionIndex)
+                    // handle single-answer question
+                    optionCount = answerCounts[optionIndex];
+                    optionCount += 1;
+                    totalResponses = answerCounts.reduce((acc, curr) => acc + (Array.isArray(curr) ? curr.length : curr), 0);
+                    totalResponses += 1;
+                }
+
+                const percentile = (optionCount / totalResponses) * 100;
+                return percentile.toFixed(2); // round to 2 decimal places
+            }
+
+            const form = document.getElementById("survey-form");
+            const redirectUrl = 'survey-results.html'
+            // Load data
+
+            form.addEventListener("submit", (event) => {
+                event.preventDefault();
+
+                // Get the user's answers to the questions
+                const commute = form.elements.commute.value;
+                const activities = form.elements["activities[]"];
+                const shop = form.elements.shop.value;
+                const material = form.elements.materials.value;
+                const practices = form.elements["practices[]"];
+                const opshop = form.elements.opshop.value;
+                const cafe = form.elements.cafe.value;
+
+                const selectedActivitiesArray = Array.from(activities).filter(activity => activity.checked).map(activity => activity.value);
+                const selectedPracticesArray = Array.from(practices).filter(practice => practice.checked).map(practice => practice.value);
+
+                
+                // Calculate the percentiles for each answer
+                const commuteQuestion = { question: 'How do you normally commute to campus? (Select one)', options: commute }
+                const commutePercentile = calculatePercentile(commuteQuestion);
+                console.log(`Percentile for "${commuteQuestion.options}" in "${commuteQuestion.question}": ${commutePercentile}%`);
+
+                const activitiesQuestion = { question: 'What sustainable activities do you practice on a regular basis? (select all that apply) I try to:', options: selectedActivitiesArray }
+                const activitiesPercentile = calculatePercentile(activitiesQuestion);
+                console.log(`Percentile for "${activitiesQuestion.options}" in "${activitiesQuestion.question}": ${activitiesPercentile}%`);
+
+                const shopQuestion = { question: 'Do you shop or own any pre-owned items - clothes, phones, electronic devices, cars or house facilities?', options: shop }
+                const shopPercentile = calculatePercentile(shopQuestion);
+                console.log(`Percentile for "${shopQuestion.options}" in "${shopQuestion.question}": ${shopPercentile}%`);
+
+                const materialQuestion = { question: 'Have you shopped for any products made from recycled materials or show environmental consideration on the product labels?', options: material }
+                const materialPercentile = calculatePercentile(materialQuestion);
+                console.log(`Percentile for "${materialQuestion.options}" in "${materialQuestion.question}": ${materialPercentile}%`);
+
+                const opshopQuestion = { question: 'What would you do if an op-shop were opened on campus?', options: opshop }
+                const opshopPercentile = calculatePercentile(opshopQuestion);
+                console.log(`Percentile for "${opshopQuestion.options}" in "${opshopQuestion.question}": ${opshopPercentile}%`);
+
+                const cafeQuestion = { question: 'What are your thoughts on the RMIT Repair Cafe?', options: cafe }
+                const cafePercentile = calculatePercentile(cafeQuestion);
+                console.log(`Percentile for "${cafeQuestion.options}" in "${cafeQuestion.question}": ${cafePercentile}%`);
+
+                const practicesQuestion = { question: 'How has covid related issues affected your long-term consumption and disposal practices? (Select all that apply)', options: selectedPracticesArray }
+                const practicesPercentile = calculatePercentile(practicesQuestion);
+                console.log(`Percentile for "${practicesQuestion.options}" in "${practicesQuestion.question}": ${practicesPercentile}%`);
+
+                // console.log(Object.values(responses.color))
+                // Display the results to the user
+                // alert("Color percentile: " + colorPercentile + "%" +
+                //     "\nExercise percentile: " + exercisePercentile + "%" +
+                //     "\nDevices percentile: " + devicesPercentile + "%" +
+                //     "\nFood percentile: " + foodPercentile + "%");
+
+                localStorage.setItem('commuteOption', commuteQuestion.options);
+                localStorage.setItem('activitiesOption', activitiesQuestion.options);
+                localStorage.setItem('shopOption', shopQuestion.options);
+                localStorage.setItem('materialOption', materialQuestion.options);
+                localStorage.setItem('opshopOption', opshopQuestion.options);
+                localStorage.setItem('cafeOption', cafeQuestion.options);
+                localStorage.setItem('practicesOption', practicesQuestion.options);
+
+                localStorage.setItem('commutePercentile', commutePercentile);
+                localStorage.setItem('activitiesPercentile', activitiesPercentile);
+                localStorage.setItem('shopPercentile', shopPercentile);
+                localStorage.setItem('materialPercentile', materialPercentile);
+                localStorage.setItem('opshopPercentile', opshopPercentile);
+                localStorage.setItem('cafePercentile', cafePercentile);
+                localStorage.setItem('practicesPercentile', practicesPercentile);
+
+                window.location.replace (redirectUrl);
+                // window.open(redirectUrl);
+            });
+
+
+
+
+
+
+
+
+
+        </script>
+    </div>
+</body>
+
+</html>
