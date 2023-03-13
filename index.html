@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <style>
-    * {
+     * {
         box-sizing: border-box;
         margin: 0;
         padding: 0;
@@ -50,7 +50,6 @@
         position: fixed;
     }
 
-
     .btn-start-survey:hover {
         background-color: #3E8E41;
     }
@@ -81,6 +80,51 @@
         text-align: left;
     }
     
+    .circular-economy-image {
+        max-width: 100%;
+        height: auto;
+        margin: 20px;
+    }
+
+    /* Media queries */
+    @media only screen and (max-width: 600px) {
+        .header {
+            padding: 30px;
+        }
+
+        .header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .blob {
+            top: 100px;
+            left: 0;
+            width: 300px;
+            height: 300px;
+        }
+
+        .blob h2 {
+            font-size: 18px;
+            margin: 80px 0 20px 20px;
+        }
+
+        .blob p {
+            font-size: 10px;
+            margin: 0 0 40px 20px;
+        }
+
+        .btn-start-survey {
+            margin-top: 40%;
+            padding: 10px 20px;
+            font-size: 18px;
+        }
+    }
 </style>
 
 <body>
