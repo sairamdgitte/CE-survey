@@ -73,6 +73,7 @@
     }
 
     .blob h2 {
+        position: flex;
         font-size: 24px;
         font-weight: bold;
         color: #fff;
@@ -81,6 +82,7 @@
     }
 
     .blob p {
+        position: inherit;
         font-size: 12px;
         color: #fff;
         margin: -15px 10px 80px 10px;
@@ -94,14 +96,29 @@
     }
 
     /* Media queries */
-    @media only screen and (max-width: 768px) {
+    @media only screen and (max-width: 2160px) {
         video {
             width: 100%;
             height: auto;
             position: relative;
         }
-        .circular-economy-image {
-            max-width: 100%;
+
+
+        .blob {
+            width: 30%;
+            height: 50%;
+            top: 30%;
+            left: 1%;
+        }
+
+        .blob h2 {
+            font-size: 20px;
+            margin: 50px 0 20px;
+        }
+
+        .blob p {
+            font-size: 10px;
+            margin: 10px 0 50px;
         }
     }
 </style>
@@ -114,7 +131,7 @@
 
     <div class="blob">
         <h2>ABOUT THE SURVEY</h2>
-        <p>The City of Melbourne together with RMIT University has plans to develop a small area around RMIT’s CBD North
+        <p>The City of Melbourne together with RMIT University has plans to develop a small area around RMIT's CBD North
             campus to foster social impact and innovation. As part of this process, RMIT aims to include Sustainability
             and Circular Economy principles within this development. Research is being conducted among key groups
             who work, study, and operate businesses in this area.</p>
